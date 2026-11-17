@@ -1,0 +1,40 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        
+
+
+        // -1 0 2 4 6 8
+
+        // 2 4 6 8
+
+        // 4 6 8
+
+        // 6 8
+
+        // 6 8
+
+
+
+
+
+        int left = 0;
+        int right = nums.length -1;
+        int mid = 0;
+
+        while(left <= right){
+            mid = (left + right) / 2;
+
+            if(target == nums[mid]){
+                return mid;
+            }
+
+            if(target < nums[mid]){
+                right = mid - 1;
+            }
+            if(target > nums[mid]){
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
